@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h4>My Blog Posts</h4>
+        <ul class="list-group" style="width: 50rem;">
+            {% for post in posts %}
+                <li class="list-group-item list-group-item-action">
+                    <a href="{{ url_for('blog.details', post_id=post.id) }}">{{ post.post_title }}</a>
+                    <p>published: {{ moment(post.post_date).format('MMMM Do YYYY') }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
