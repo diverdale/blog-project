@@ -28,3 +28,14 @@ class RegistrationForm(FlaskForm):
     def check_username(self, field):
         if User.query.filter_by(user_username=field).first():
             return True
+
+
+class EditUserForm(FlaskForm):
+
+    user_email = StringField('Email', validators=[DataRequired(), Email()])
+    user_username = StringField('Username', validators=[DataRequired()])
+    user_role = StringField('Role', validators=[DataRequired()])
+    user_password = PasswordField('Password', validators=[DataRequired(),
+                                                          EqualTo('pass_confirm', message='Passwords mismatch')])
+    pass_confirm = PasswordField('Confirm Password', validators=[DataRequired()])
+    submit = SubmitField('Submit')

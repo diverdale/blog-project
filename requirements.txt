@@ -12,6 +12,7 @@ Flask-Login==0.5.0
 Flask-Migrate==2.5.3
 Flask-Misaka==1.0.0
 Flask-Moment==0.9.0
+flask-paginate==0.6.0
 Flask-SQLAlchemy==2.4.2
 Flask-WTF==0.14.3
 gunicorn==20.0.4

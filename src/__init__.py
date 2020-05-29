@@ -20,6 +20,7 @@ app.config['SECRET_KEY'] = 'supersecretkey'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir, 'blog.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['POSTS_PER_PAGE'] = 4
 
 db = SQLAlchemy(app)
 Migrate(app, db)

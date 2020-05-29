@@ -7,3 +7,10 @@ class AddForm(FlaskForm):
     post_title = StringField('Title: ')
     post_content = TextAreaField('Body', render_kw={'rows': 10})
     submit = SubmitField('Submit')
+
+
+class EditForm(FlaskForm):
+
+    post_title = StringField('Title: ')
+    post_content = TextAreaField('Body', render_kw={'rows': 10})
+    submit = SubmitField('Submit')
